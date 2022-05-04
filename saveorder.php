@@ -54,7 +54,10 @@ background-color: #FFF6EA
 			unset($_SESSION['cart1']);
 		}
 	}
-
+	else{
+		mysqli_query($conn, "ROLLBACK");  
+		$msg = "บันทึกข้อมูลไม่สำเร็จ กรุณาติดต่อเจ้าหน้าที่ค่ะ ";	
+	}
 ?>
 <script type="text/javascript">
 	alert("<?php echo $msg;?>");
